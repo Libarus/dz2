@@ -1,0 +1,30 @@
+
+.subcategory {
+
+    margin-bottom: 38px;
+
+    &__list {
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        border-radius: 5px;
+        background-color: #fbfbfb;
+        border: 1px solid #dde1e4;
+    }
+
+    &__item {
+    }
+
+    &__link {
+        display: block;
+        padding: 13px 28px;
+        text-decoration: none;
+        color: #a0a0a0;
+    }
+
+    &__item:hover &__link,
+    &__item-active &__link {
+        background-color: #dae5eb;
+        color: #5c656c;
+    }
+}

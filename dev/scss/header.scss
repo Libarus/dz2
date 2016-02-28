@@ -1,0 +1,153 @@
+
+.header1 {
+    background-color: white;
+    height: 78px;
+    border-bottom: 2px solid #ebedef;
+}
+
+
+.socials {
+    
+    float: left;
+    display: table;
+    height: 78px;
+
+    &__list {
+        display: table-cell;
+        vertical-align: middle;
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    &__item {
+        display: inline-block;
+        margin-right: 16px;
+    }
+
+}
+
+.contacts {
+
+    float: right;
+    display: table;
+    height: 72px;
+
+    &__list {
+        display: table-cell;
+        vertical-align: middle;
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    &__item {
+        display: inline-block;
+
+        & .icons {
+            margin-right: 8px;
+        }
+
+    }
+    
+    &__item-address {
+    }
+    
+    &__item-phone {
+        padding-left: 89px;
+        font-size: 18.5px;
+        font-weight: bold;
+    }
+
+}
+
+
+
+.header2 {
+    height: 94px;
+}
+
+.logo {
+    float:left;
+    display: table;
+    height: 94px;
+
+    &__link {
+        display: table-cell;
+        vertical-align: middle;
+    }
+}
+
+.search {
+    float: left;
+    display: table;
+    height: 94px;
+
+    &__form {
+        display: table-cell;
+        vertical-align: middle;
+    }
+
+    &__input {
+        margin: 0;
+        border: 1px solid $grey;
+        border-right: 0;
+        border-radius: 3px 0px 0px 3px;
+        padding: 11px 17px;
+        width: 288px;
+        height: 34px;
+        margin-left: 56px;
+        background-color: $silver;
+    }
+
+    &__button {
+        margin: 0;
+        border: 0;
+        border-radius: 0px 3px 3px 0px;
+        background-color: $orange;
+        font-family: 'open_sansbold';
+        color: white;
+        width: 79px;
+        height: 34px;
+    }
+}
+
+.maps {
+    float:right;
+    display: table;
+    height: 94px;
+    font-size: 15px;
+
+    &__list {
+        display: table-cell;
+        vertical-align: middle;
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    &__item {
+        display: inline-block;
+        margin-left: 35px;
+        border-bottom: 1px solid black;
+    }
+
+    &__item:hover {
+        border-bottom: 0;
+    }
+
+    &__link {
+        text-decoration: none;
+        font-family: 'open_sansbold';
+        color: black;
+    }
+
+    &__item-selected {
+        border-bottom: 1px solid $orange;
+        color: $orange;
+    }
+    
+    &__item-selected &__link {
+        color: $orange;
+    }
+}

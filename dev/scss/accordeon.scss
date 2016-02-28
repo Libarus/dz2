@@ -1,0 +1,14 @@
+
+.accordeon {
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: 290px center;
+
+    &__open {
+        background-image: url(../images/acc_open.png);
+    }
+
+    &__close {
+        background-image: url(../images/acc_close.png);
+    }
+}

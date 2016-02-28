@@ -1,0 +1,225 @@
+.filtr {
+
+    border-radius: 5px;
+    padding-bottom: 15px;
+    background-color: #fbfbfb;
+    border: 1px solid #dde1e4;
+
+    &__title {
+        font-size: 15.3px;
+        padding: 11px 28px 14px 28px;
+        font-family: 'open_sansbold';
+        border-top: 1px solid #dde1e4;
+    }
+
+    &__title:first-child {
+        border-top: 0px solid #dde1e4;
+    }
+
+    &__body {
+        padding: 0px 28px 3px 28px;
+    }
+
+}
+
+
+.instock {
+
+    &__list {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    &__item {
+    }
+
+    &__link {
+    }
+
+}
+
+
+.brands {
+
+    margin-bottom: 15px;
+
+    &__list {
+        list-style: none;
+        margin: 0px 0px -8px 0px;
+        padding: 0px;
+    }
+
+    &__item {
+    }
+
+    &__link {
+    }
+
+    &__clear {
+        color: #5BB1FC;
+        text-decoration: underline;
+    }
+
+}
+
+
+.price {
+
+    &__range_txt,
+    &__range_txt2 {
+        float: left;
+        padding-top: 8px;
+        margin-right: 15px;
+    }
+
+    &__range_txt2 {
+        margin-left: 48px;
+    }
+
+    &__range_value {
+        float: left;
+    }
+
+    &__input {
+        border: 1px solid #ecedef;
+        border-radius: 5px;
+        padding: 8px;
+        width: 82px;
+        color: black;
+    }
+
+    &__range {
+        width: 264px;
+        overflow: hidden;
+    }
+
+    &__range-left {
+        display: inline-block;
+        background-color: $grey;
+        width: 10%;
+        height: 3px;
+    }
+
+    &__range-middle {
+        display: inline-block;
+        background-color: $orange;
+        width: 60%;
+        height: 3px;
+    }
+
+    &__range-right {
+        display: inline-block;
+        background-color: $grey;
+        width: 30%;
+        height: 3px;
+    }
+
+    &__rangemetka {
+        margin-top: -11px;
+        margin-bottom: 18px;
+    }
+
+    &__rangemetka-left {
+        display: inline-block;
+        margin-left: 23px;
+    }
+
+    &__rangemetka-right {
+        display: inline-block;
+        margin-left: 149px;
+    }
+
+}
+
+
+
+.os {
+
+    &__list {
+        list-style: none;
+        margin: 0px 0px -5px 0px;
+        padding: 0px;
+    }
+
+    &__item {
+    }
+
+    &__link {
+    }
+
+    &__clear {
+        color: #5BB1FC;
+        text-decoration: underline;
+    }
+
+}
+
+
+.color {
+
+    &__list {
+        list-style: none;
+        margin: 0px 0px 10px 0px;
+        padding: 0px;
+    }
+
+    &__item {
+        float: left;
+        width: 43px;
+        height: 43px;
+        display: block;
+        margin-right: 15px;
+        border-radius: 5px;
+        margin-bottom: 16px;
+        border: 3px solid transparent;
+    }
+
+    &__item:hover {
+        border: 3px solid #ff6600;
+    }
+
+    &__link {
+        display: block;
+        width: 37px;
+        height: 37px;
+        border: 1px solid #E0E1E5;
+    }
+
+    &__item_white &__link {
+        background-color: white;
+    }
+    &__item_silver &__link { 
+        background-color: #CCCCCC;
+    }
+    &__item_black &__link {
+        background-color: black;
+    }
+    &__item_navy &__link {
+        background-color: #0A3054;
+    }
+    &__item_red &__link {
+        background-color: #FE1800;
+    }
+    &__item_yellow &__link {
+        background-color: #FFF444;
+    }
+    &__item_orange &__link {
+        background-color: #FC914B;
+    }
+    &__item_green &__link {
+        background-color: #91C37C;
+    }
+    &__item_blue &__link {
+        background-color: #41A6FF;
+    }
+    &__item_purple &__link {
+        background-color: #9870AE;
+    }
+    &__item_pink &__link {
+        background-color: #DC78AE;
+    }
+    &__item_brown &__link {
+        background-color: #7F401D;
+    }
+}

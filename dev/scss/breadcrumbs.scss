@@ -1,0 +1,39 @@
+
+.breadcrumbs {
+
+    height:68px;
+
+    &__list {
+        line-height: 73px;
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    &__item {
+        display: inline-block;
+    }
+
+    &__item:after {
+        content: '>';
+        margin-left: 3px;
+        margin-right: 3px;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: black;
+    }
+
+
+    &__item:last-child:after {
+        content: '';
+    }
+
+    &__item:last-child &__link {
+        color: $orange;
+        border-bottom: 1px solid $orange;
+        /*text-decoration: underline;*/
+    }
+
+}

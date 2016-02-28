@@ -20,7 +20,7 @@ html(lang='ru-RU')
               - var soc = ['fb','vk','tw']
               each item in soc
                 li.socials__item
-                  a.socials__link(href='')
+                  a.socials__link(href='#')
                     i.icons(class="icon-" + item)
 
           .contacts
@@ -43,11 +43,11 @@ html(lang='ru-RU')
           .maps
             ul.maps__list
               li.maps__item.maps__item-selected
-                a.maps__link(href='') Карта проезда
+                a.maps__link(href='#') Карта проезда
               li.maps__item
-                a.maps__link(href='') История заказов
+                a.maps__link(href='#') История заказов
               li.maps__item
-                a.maps__link(href='') Корзина
+                a.maps__link(href='#') Корзина
       .nav
         .wrapper
           ul.nav__list
@@ -56,19 +56,18 @@ html(lang='ru-RU')
             each item in navig
               if item == selected
                 li.nav__item.nav__item-selected
-                  a.nav__link(href='')= item
+                  a.nav__link(href='#')= item
               else
                 li.nav__item
-                  a.nav__link(href='')= item
-            //- li.nav__item.nav__item-selected
+                  a.nav__link(href='#')= item
 
       .breadcrumbs
         .wrapper
           ul.breadcrumbs__list
             li.breadcrumbs__item
-              a.breadcrumbs__link(href='') Главная
+              a.breadcrumbs__link(href='#') Главная
             li.breadcrumbs__item.breadcrumbs__item-active
-              a.breadcrumbs__link(href='') Каталог
+              a.breadcrumbs__link(href='#') Каталог
       
       .maincontent.clearfix
         .wrapper
@@ -78,9 +77,9 @@ html(lang='ru-RU')
             .subcategory
               ul.subcategory__list
                 li.subcategory__item
-                  a.subcategory__link(href='') Флагманы
+                  a.subcategory__link(href='#') Флагманы
                 li.subcategory__item.subcategory__item-active
-                  a.subcategory__link(href='') Бюджетная линейка
+                  a.subcategory__link(href='#') Бюджетная линейка
 
             .filtr
               .filtr__title Наличие в магазинах
@@ -103,7 +102,7 @@ html(lang='ru-RU')
                       li.brands__item
                         input.checkbox-input(type='checkbox', name='brands[]', id='#{indx}')
                         label.checkbox-label(for='#{indx}') #{nme}
-                  a.brands__clear Сбросить фильтр
+                  a.brands__clear(href='#') Сбросить фильтр
 
               .filtr__title Цена
               .filtr__body
@@ -146,71 +145,92 @@ html(lang='ru-RU')
                         input.checkbox-input(type='checkbox', name='os[]', id='#{indx}')
                         label.checkbox-label(for='#{indx}') #{nme}
 
-                  a.os__clear Сбросить фильтр
+                  a.os__clear(href='#') Сбросить фильтр
 
           .content
             
-            .sort.clearfix
-              .sorting
-                .sorting__text Сортировать по
-                .sorting__combobox по цене
-              .view
-                ul.view__list
-                  li.view__item Вид каталога
-                  li.view__item
-                    a.view__link.view__list_off(href='')
-                  li.view__item
-                    a.view__link.view__thumbnail_off(href='')
-                  li.view__item
-                    a.view__link.view__small_list_off(href='')
+            .showvariant.var1
+              .products
+                .sort.clearfix
+                  .sorting
+                    .sorting__text Сортировать по
+                    .sorting__combobox по цене
+                      .sorting__panel
+                        ul.sorting__panel-list
+                          li.sorting__panel-item
+                            a.sorting__panel-link(href='#') по цене
+                          li.sorting__panel-item
+                            a.sorting__panel-link(href='#') по популярности
 
-            .products
-              ul.products__list
-                - for(var i = 1; i < 10; i++)
-                  li.products__item
-                    .products__item-inner.clearfix
-                      .products__slideshow
-                        a.products__slideshow-show(href='')
-                          img.products__slideshow-image(src='http://lorempixel.com/image_output/technics-q-c-200-200-' + i + '.jpg')
-                        ul.products__slideshow-thumbs.clearfix
-                          - for (var j = 1; j < 4; j++)
-                            li.products__slideshow-items
-                              a.products__slideshow-link(href='')
-                                img.products__slideshow-thumbimg(src='http://lorempixel.com/image_output/technics-q-c-50-50-' + j + '.jpg')
-                        .products__articul
-                          .products__articul-text Артикул
-                          .products__articul-number 000999
+                  .view
+                    ul.view__list
+                      li.view__item Вид каталога
+                      li.view__item
+                        a.view__link.view__list_off.click-variant(href='#', data-variant='var1')
+                      li.view__item
+                        a.view__link.view__thumbnail_off.click-variant(href='#', data-variant='var2')
+                      li.view__item
+                        a.view__link.view__small_list_off.click-variant(href='#', data-variant='var3')
 
-                      .products__description
-                        .products__description-title Samsung Lorem ipsum dolor sit.
-                        .products__description-text  Смартфон Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius vel tempore porro nihil iure delectus amet numquam mollitia rem quisquam.
-                        .products__stars
-                          - for (var s1 = 0; s1 < 4; s1++)
-                            i.icons.icon-staron
-                          - for (var s1 = 0; s1 < 1; s1++)
-                            i.icons.icon-staroff
-                          .products__stars-value 4.2
+                ul.products__list
+                  - for(var i = 1; i < 10; i++)
+                    li.products__item
+                      .products__item-inner.clearfix
+                        .products__slideshow
+                          a.products__slideshow-show(href='#')
+                            img.products__slideshow-image(src='http://lorempixel.com/image_output/technics-q-c-200-200-' + i + '.jpg')
+                          ul.products__slideshow-thumbs.clearfix
+                            - for (var j = 1; j < 4; j++)
+                              li.products__slideshow-items
+                                a.products__slideshow-link(href='#')
+                                  img.products__slideshow-thumbimg(src='http://lorempixel.com/image_output/technics-q-c-50-50-' + j + '.jpg')
+                          .products__articul
+                            .products__articul-text Артикул
+                            .products__articul-number 189238
+                        .products__articul2
+                          .products__articul2-text Артикул
+                          .products__articul2-number 189238
 
-                      .products__price
-                        .products__price-info
-                          .products__price-summa 11 290
-                            span.rur р
-                              span уб.
-                        .products__price-controls
-                          button.products__price-button В корзину
-                          .products__price-instock
-                            .products__price-indocator
-                            .products__price-text В наличии
-              .paginator.clearfix
-                .paginator__block
-                  ul.paginator__list
-                    li.paginator__item
-                      a.paginator__link(href='') &lt;
-                    - for(var i = 0; i < 4; i++)
+                        .products__description
+                          .products__description-title Смартфон Samsung Lorem ipsum dolor sit.
+                          .products__description-text  Смартфон Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius vel tempore porro nihil iure delectus amet numquam mollitia rem quisquam.
+                          .products__chars
+                            - var chars = { 'Тип SIM-карты':'Micro-SIM', 'Количество SIM-карт':'1', 'Цвет':'Белый', 'ОС':'Android', 'Связь 3G':'есть', '4G':'нет', 'GPS-модуль':'есть' }
+                            - var m = 0
+                            ul.products__chars-list
+                              each val1, val2 in chars
+                                - m++
+                                li.products__chars-item.clearfix(class='products__chars-line' + m%2)
+                                  .products__chars-int1= val2
+                                  .products__chars-int2= val1
+                          .products__stars
+                            - for (var s1 = 0; s1 < 4; s1++)
+                              i.icons.icon-staron
+                            - for (var s1 = 0; s1 < 1; s1++)
+                              i.icons.icon-staroff
+                            .products__stars-value 4.2
+
+                        .products__price
+                          .products__price-info
+                            .products__price-summa 11 290
+                              span.rur р
+                                span уб.
+                          .products__price-controls
+                            button.products__price-button В корзину
+                            .products__price-instock
+                              .products__price-indocator
+                              .products__price-text В наличии
+                .paginator.clearfix
+                  .paginator__block
+                    ul.paginator__list
                       li.paginator__item
-                        a.paginator__link(href='')= i
-                    li.paginator__item
-                      a.paginator__link(href='') &gt;
+                        a.paginator__link(href='#') &lt;
+                      - for(var i = 0; i < 4; i++)
+                        li.paginator__item
+                          a.paginator__link(href='#')= i
+                      li.paginator__item
+                        a.paginator__link(href='#') &gt;
+              //- .products
       .txt
         .wrapper
           .txt__title Важная информация
@@ -238,14 +258,16 @@ html(lang='ru-RU')
                 - var soc_f = ['fb_f','vk_f','tw_f']
                 each item in soc_f
                   li.footer__socials-item
-                    a.footer__socials-link(href='')
+                    a.footer__socials-link(href='#')
                       i.icons(class="icon-" + item)
             .footer__nav
               ul.footer__nav-list
                 each item in navig
                   li.footer__nav-item
-                    a.footer__nav-link(href='')= item
+                    a.footer__nav-link(href='#')= item
         .footer__copyright All rights reserved. 2016. no copy alowed
 
 
   script(src="bower/jquery/dist/jquery.js")
+  script(src="js/accordeon.js")
+  script(src="js/modul.js")

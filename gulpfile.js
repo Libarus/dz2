@@ -8,7 +8,7 @@ var paths = {
     src: {
         dev:'dev/**/*.*',
         jade:'dev/**/*.jade',
-        scss:'dev/scss/**/*.scss',
+        scss:'dev/scss/style.scss',
         sprites: 'dev/sprites/*.png'
     },
     dest:{
