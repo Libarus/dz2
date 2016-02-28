@@ -1,16 +1,251 @@
 doctype html
 html(lang='ru-RU')
-    head
-        meta(charset='utf-8')
-        title Главная
-    body
-        
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=1000, initial-scale=1.0')
+    meta(name='description', content='Интернет-магазин электроники COOLTECH')
+    meta(name='keywords', content='гаджеты')
+    link(rel='stylesheet', href='bower/normalize-css/normalize.css')
+    link(rel='stylesheet', href='css/fonts.css')
+    link(rel='stylesheet', href='css/style.css')
+    link(rel='stylesheet', href='css/sprite.css')
+    title COOLTECH
+  body
+    .main
+      .header1
         .wrapper
-            .conent
-                
-                |content
-        
-        .footer
-            .common
+          .socials
+            ul.socials__list
+              - var soc = ['fb','vk','tw']
+              each item in soc
+                li.socials__item
+                  a.socials__link(href='')
+                    i.icons(class="icon-" + item)
+
+          .contacts
+            ul.contacts__list
+              li.contacts__item.contacts__item-address
+                i.icons.icon-mappin
+                | ул. Маяковская 6, офис 17
+              li.contacts__item.contacts__item-phone
+                i.icons.icon-telephone
+                | +7 (921) 123-12-13
+      .header2
+        .wrapper
+          .logo
+            a.logo__link(href='/')
+              img.logo__imge(src='images/logo.png', alt='COOLTECH')
+          .search
+            form.search__form(action='')
+              input.search__input(type='text' placeholder='Что будем искать')
+              button.search__button Найти
+          .maps
+            ul.maps__list
+              li.maps__item.maps__item-selected
+                a.maps__link(href='') Карта проезда
+              li.maps__item
+                a.maps__link(href='') История заказов
+              li.maps__item
+                a.maps__link(href='') Корзина
+      .nav
+        .wrapper
+          ul.nav__list
+            - var navig = ['Планшеты','Мобильные телефоны','Mp3 плееры','Персональные компьютеры','Ноутбуки','Аксессуары','Бытовая техника']
+            - var selected = 'Мобильные телефоны'
+            each item in navig
+              if item == selected
+                li.nav__item.nav__item-selected
+                  a.nav__link(href='')= item
+              else
+                li.nav__item
+                  a.nav__link(href='')= item
+            //- li.nav__item.nav__item-selected
+
+      .breadcrumbs
+        .wrapper
+          ul.breadcrumbs__list
+            li.breadcrumbs__item
+              a.breadcrumbs__link(href='') Главная
+            li.breadcrumbs__item.breadcrumbs__item-active
+              a.breadcrumbs__link(href='') Каталог
+      
+      .maincontent.clearfix
+        .wrapper
+          h1.titlepage Мобильные телефоны
+
+          .aside
+            .subcategory
+              ul.subcategory__list
+                li.subcategory__item
+                  a.subcategory__link(href='') Флагманы
+                li.subcategory__item.subcategory__item-active
+                  a.subcategory__link(href='') Бюджетная линейка
+
+            .filtr
+              .filtr__title Наличие в магазинах
+              .filtr__body
+                .instock
+                  ul.instock__list
+                    li.instock__item
+                      input.radio-input(type='radio', name='instock', id='allstock')
+                      label.radio-label(for='allstock') Во всех магазинах
+                    li.instock__item
+                      input.radio-input(type='radio', name='instock', id='closestock')
+                      label.radio-label(for='closestock') В ближайшем ко мне магазине
+
+              .filtr__title Бренды
+              .filtr__body
+                .brands
+                  ul.brands__list
+                    - var brands = {'lenovo':'Lenovo', 'apple':'Apple', 'samsung':'Samsung', 'asus':'Asus', 'motorola':'Motorola'}
+                    each nme, indx in brands
+                      li.brands__item
+                        input.checkbox-input(type='checkbox', name='brands[]', id='#{indx}')
+                        label.checkbox-label(for='#{indx}') #{nme}
+                  a.brands__clear Сбросить фильтр
+
+              .filtr__title Цена
+              .filtr__body
+                .price.clearfix
+                  .price__range_txt
+                    | от
+                  .price__range_value
+                    input.price__input(value='100')
+                  .price__range_txt2
+                    | до
+                  .price__range_value
+                    input.price__input(value='50000')
+                  .price__range
+                    .price__range-left
+                    .price__range-middle
+                    .price__range-right
+                  .price__rangemetka
+                    .price__rangemetka-left
+                      i.icons.icon-metka
+                    .price__rangemetka-right
+                      i.icons.icon-metka
 
 
+              .filtr__title Цвет
+              .filtr__body
+                .color.clearfix
+                  ul.color__list
+                    - var colors = ['white', 'silver', 'black', 'navy', 'red', 'yellow', 'orange', 'green', 'blue', 'purple', 'pink', 'brown']
+                    each color in colors
+                      li.color__item(class="color__item_" + color)
+                        a.color__link &nbsp;
+
+              .filtr__title Операционные системы
+              .filtr__body 
+                .os
+                  ul.os__list
+                    - var brands = {'android':'Android', 'ios':'iOS', 'winmob':'Windows Mobile', 'symbian':'Symbian', 'cusotm':'Custom'}
+                    each nme, indx in brands
+                      li.os__item
+                        input.checkbox-input(type='checkbox', name='os[]', id='#{indx}')
+                        label.checkbox-label(for='#{indx}') #{nme}
+
+                  a.os__clear Сбросить фильтр
+
+          .content
+            
+            .sort.clearfix
+              .sorting
+                .sorting__text Сортировать по
+                .sorting__combobox по цене
+              .view
+                ul.view__list
+                  li.view__item Вид каталога
+                  li.view__item
+                    a.view__link.view__list_off(href='')
+                  li.view__item
+                    a.view__link.view__thumbnail_off(href='')
+                  li.view__item
+                    a.view__link.view__small_list_off(href='')
+
+            .products
+              ul.products__list
+                - for(var i = 1; i < 10; i++)
+                  li.products__item
+                    .products__item-inner.clearfix
+                      .products__slideshow
+                        a.products__slideshow-show(href='')
+                          img.products__slideshow-image(src='http://lorempixel.com/image_output/technics-q-c-200-200-' + i + '.jpg')
+                        ul.products__slideshow-thumbs.clearfix
+                          - for (var j = 1; j < 4; j++)
+                            li.products__slideshow-items
+                              a.products__slideshow-link(href='')
+                                img.products__slideshow-thumbimg(src='http://lorempixel.com/image_output/technics-q-c-50-50-' + j + '.jpg')
+                        .products__articul
+                          .products__articul-text Артикул
+                          .products__articul-number 000999
+
+                      .products__description
+                        .products__description-title Samsung Lorem ipsum dolor sit.
+                        .products__description-text  Смартфон Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius vel tempore porro nihil iure delectus amet numquam mollitia rem quisquam.
+                        .products__stars
+                          - for (var s1 = 0; s1 < 4; s1++)
+                            i.icons.icon-staron
+                          - for (var s1 = 0; s1 < 1; s1++)
+                            i.icons.icon-staroff
+                          .products__stars-value 4.2
+
+                      .products__price
+                        .products__price-info
+                          .products__price-summa 11 290
+                            span.rur р
+                              span уб.
+                        .products__price-controls
+                          button.products__price-button В корзину
+                          .products__price-instock
+                            .products__price-indocator
+                            .products__price-text В наличии
+              .paginator.clearfix
+                .paginator__block
+                  ul.paginator__list
+                    li.paginator__item
+                      a.paginator__link(href='') &lt;
+                    - for(var i = 0; i < 4; i++)
+                      li.paginator__item
+                        a.paginator__link(href='')= i
+                    li.paginator__item
+                      a.paginator__link(href='') &gt;
+      .txt
+        .wrapper
+          .txt__title Важная информация
+          .txt__block
+            .txt__left
+             p.txt__paragraf Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quibusdam velit eligendi nulla, totam ad reprehenderit laudantium accusamus veritatis quae nisi eum ipsa natus quo maxime corporis repudiandae culpa, iure iusto, soluta, ex quas quia quos. Magnam animi, molestias repudiandae neque harum libero tenetur, aperiam voluptate quasi laborum molestiae asperiores soluta exercitationem magni error corporis. Rerum sint consectetur ex, et odit commodi? Deleniti vitae, voluptatibus ipsum aspernatur labore reprehenderit deserunt ducimus eos illum. Qui dicta ad, quia non aliquid? Fuga.
+             p.txt__paragraf Explicabo rerum magni dolores officia obcaecati necessitatibus esse accusamus sequi qui hic eveniet, excepturi ipsam molestiae at sit iusto aperiam pariatur consequatur neque tenetur. Doloribus, maiores, asperiores sint veniam sunt minima, neque molestiae dolorum tempore explicabo quod aliquam repellat ea dolor vel.
+             p.txt__paragraf Voluptatem dolores quod deleniti commodi sed molestiae tempore, nemo quae pariatur dolore. Quia quisquam nisi doloremque beatae.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta, quae.
+            .txt__right
+             p.txt__paragraf Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem quibusdam velit eligendi nulla, totam ad reprehenderit laudantium accusamus veritatis quae nisi eum ipsa natus quo maxime corporis repudiandae culpa, iure iusto, soluta, ex quas quia quos. Magnam animi, molestias repudiandae neque harum libero tenetur, aperiam voluptate quasi laborum molestiae asperiores soluta exercitationem magni error corporis. Rerum sint consectetur ex, et odit commodi? Deleniti vitae, voluptatibus ipsum aspernatur labore reprehenderit deserunt ducimus eos illum. Qui dicta ad, quia non aliquid? Fuga.
+             p.txt__paragraf Explicabo rerum magni dolores officia obcaecati necessitatibus esse accusamus sequi qui hic eveniet, excepturi ipsam molestiae at sit iusto aperiam pariatur consequatur neque tenetur. Doloribus, maiores, asperiores sint veniam sunt minima, neque molestiae dolorum tempore explicabo quod aliquam repellat ea dolor vel.
+             p.txt__paragraf Voluptatem dolores quod deleniti commodi sed molestiae tempore, nemo quae pariatur dolore. Quia quisquam nisi doloremque beatae.  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla, accusantium!
+
+
+      .hFooter
+    .footer
+      .wrapper
+        .footer__block.clearfix
+          .footer__logo
+            a.logo__link(href='/')
+              img.logo__imge(src='images/logotfooter.png', alt='COOLTECH')
+          .footer__right
+            .footer__socials
+              ul.footer__socials-list
+                - var soc_f = ['fb_f','vk_f','tw_f']
+                each item in soc_f
+                  li.footer__socials-item
+                    a.footer__socials-link(href='')
+                      i.icons(class="icon-" + item)
+            .footer__nav
+              ul.footer__nav-list
+                each item in navig
+                  li.footer__nav-item
+                    a.footer__nav-link(href='')= item
+        .footer__copyright All rights reserved. 2016. no copy alowed
+
+
+  script(src="bower/jquery/dist/jquery.js")

@@ -1,0 +1,149 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+```html
+<!-- `display: block` sprite -->
+<div class="icon-home"></div>
+
+<!-- `display: inline-block` sprite -->
+<img class="icon-home" />
+```
+*/
+.icon-checkboxmid {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -270px;
+  width: 19px;
+  height: 19px;
+}
+.icon-checkboxoff {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -175px;
+  width: 19px;
+  height: 19px;
+}
+.icon-checkboxon {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -194px;
+  width: 19px;
+  height: 19px;
+}
+.icon-fb {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -315px;
+  width: 26px;
+  height: 26px;
+}
+.icon-fb_f {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -410px;
+  width: 43px;
+  height: 43px;
+}
+.icon-mappin {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -47px;
+  width: 11px;
+  height: 16px;
+}
+.icon-metka {
+  background-image: url(../images/sprite.png);
+  background-position: 0px 0px;
+  width: 8px;
+  height: 15px;
+}
+.icon-radiodis {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -213px;
+  width: 19px;
+  height: 19px;
+}
+.icon-radiooff {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -232px;
+  width: 19px;
+  height: 19px;
+}
+.icon-radioon {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -251px;
+  width: 19px;
+  height: 19px;
+}
+.icon-staroff {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -15px;
+  width: 20px;
+  height: 16px;
+}
+.icon-staron {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -63px;
+  width: 20px;
+  height: 16px;
+}
+.icon-telephone {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -95px;
+  width: 11px;
+  height: 16px;
+}
+.icon-tw {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -289px;
+  width: 26px;
+  height: 26px;
+}
+.icon-tw_f {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -367px;
+  width: 43px;
+  height: 43px;
+}
+.icon-view_list_off {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -143px;
+  width: 16px;
+  height: 16px;
+}
+.icon-view_list_on {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -159px;
+  width: 16px;
+  height: 16px;
+}
+.icon-view_small_list_off {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -127px;
+  width: 16px;
+  height: 16px;
+}
+.icon-view_small_list_on {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -111px;
+  width: 16px;
+  height: 16px;
+}
+.icon-view_thumbnail_off {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -31px;
+  width: 16px;
+  height: 16px;
+}
+.icon-view_thumbnail_on {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -79px;
+  width: 16px;
+  height: 16px;
+}
+.icon-vk {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -341px;
+  width: 26px;
+  height: 26px;
+}
+.icon-vk_f {
+  background-image: url(../images/sprite.png);
+  background-position: 0px -453px;
+  width: 43px;
+  height: 43px;
+}
