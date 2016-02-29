@@ -7,6 +7,7 @@ html(lang='ru-RU')
     meta(name='description', content='Интернет-магазин электроники COOLTECH')
     meta(name='keywords', content='гаджеты')
     link(rel='stylesheet', href='bower/normalize-css/normalize.css')
+    link(rel='stylesheet', href='bower/jquery-ui/themes/base/slider.css')
     link(rel='stylesheet', href='css/fonts.css')
     link(rel='stylesheet', href='css/style.css')
     link(rel='stylesheet', href='css/sprite.css')
@@ -87,7 +88,7 @@ html(lang='ru-RU')
                 .instock
                   ul.instock__list
                     li.instock__item
-                      input.radio-input(type='radio', name='instock', id='allstock')
+                      input.radio-input(type='radio', name='instock', id='allstock', checked='checked')
                       label.radio-label(for='allstock') Во всех магазинах
                     li.instock__item
                       input.radio-input(type='radio', name='instock', id='closestock')
@@ -110,20 +111,20 @@ html(lang='ru-RU')
                   .price__range_txt
                     | от
                   .price__range_value
-                    input.price__input(value='100')
+                    input.price__input.price__input-min(value='2000')
                   .price__range_txt2
                     | до
                   .price__range_value
-                    input.price__input(value='50000')
-                  .price__range
-                    .price__range-left
-                    .price__range-middle
-                    .price__range-right
-                  .price__rangemetka
-                    .price__rangemetka-left
-                      i.icons.icon-metka
-                    .price__rangemetka-right
-                      i.icons.icon-metka
+                    input.price__input.price__input-max(value='30000')
+                .price__range
+                  //-   .price__range-left
+                  //-   .price__range-middle
+                  //-   .price__range-right
+                  //- .price__rangemetka
+                  //-   .price__rangemetka-left
+                  //-     i.icons.icon-metka
+                  //-   .price__rangemetka-right
+                  //-     i.icons.icon-metka
 
 
               .filtr__title Цвет
@@ -149,7 +150,7 @@ html(lang='ru-RU')
 
           .content
             
-            .showvariant.var1
+            .showvariant.variant_list
               .products
                 .sort.clearfix
                   .sorting
@@ -166,11 +167,11 @@ html(lang='ru-RU')
                     ul.view__list
                       li.view__item Вид каталога
                       li.view__item
-                        a.view__link.view__list_off.click-variant(href='#', data-variant='var1')
+                        a.view__link.view__list_off.click-variant(href='#', data-variant='variant_list')
                       li.view__item
-                        a.view__link.view__thumbnail_off.click-variant(href='#', data-variant='var2')
+                        a.view__link.view__thumbnail_off.click-variant(href='#', data-variant='variant_thumbnail')
                       li.view__item
-                        a.view__link.view__small_list_off.click-variant(href='#', data-variant='var3')
+                        a.view__link.view__small_list_off.click-variant(href='#', data-variant='variant_small_list')
 
                 ul.products__list
                   - for(var i = 1; i < 10; i++)
@@ -181,8 +182,9 @@ html(lang='ru-RU')
                             img.products__slideshow-image(src='http://lorempixel.com/image_output/technics-q-c-200-200-' + i + '.jpg')
                           ul.products__slideshow-thumbs.clearfix
                             - for (var j = 1; j < 4; j++)
+                              - var big = 'http://lorempixel.com/image_output/technics-q-c-200-200-' + j + '.jpg'
                               li.products__slideshow-items
-                                a.products__slideshow-link(href='#')
+                                a.products__slideshow-link(href='#', data-big='' + big)
                                   img.products__slideshow-thumbimg(src='http://lorempixel.com/image_output/technics-q-c-50-50-' + j + '.jpg')
                           .products__articul
                             .products__articul-text Артикул
@@ -269,5 +271,8 @@ html(lang='ru-RU')
 
 
   script(src="bower/jquery/dist/jquery.js")
+  script(src="bower/jquery-ui/jquery-ui.js")
   script(src="js/accordeon.js")
+  script(src="js/slideshow.js")
+  script(src="js/rangeselector.js")
   script(src="js/modul.js")

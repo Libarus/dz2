@@ -3,18 +3,45 @@ $(function () {
     /*
      * Инициализируем аккордеон
      */
-    accordeon.init('filtr__title',true);
+    accordeon.init('filtr__title',false);
+
+    /*
+     * Инициализируем слайдшоу
+     */
+    slideshow.init('products__slideshow');
     
+    //rangeselector.init('price',1000,50000);
+
+    $( ".price__range" ).slider({
+        range: true,
+        min: 1000,
+        max: 50000,
+        values: [ 2000, 30000 ],
+        slide: function( event, ui ) {
+            $(".price__input-min").val(ui.values[ 0 ]);
+            $(".price__input-max").val(ui.values[ 1 ]);
+        }
+    });
+
+    $(".ui-slider-handle").addClass("icons icon-metka");
+    //$( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) + " - $" + $( "#slider-range" ).slider( "values", 1 ) );
+
+
     /*
      * Вешаем клик на ссылки-переключатели вида каталога
      */
     $(".click-variant").each(function () {
 
         $(this).on('click',function () {
+
+            (function () {
+                $(".click-variant").each(function () {
+                    var className = $(this).data('variant');
+                    $(".showvariant").removeClass(className);
+                });
+            })();
+
             var variant = $(this).data('variant');
-            $(".showvariant").removeClass('var1');
-            $(".showvariant").removeClass('var2');
-            $(".showvariant").removeClass('var3');
             $(".showvariant").addClass(variant);
             return false;
         });

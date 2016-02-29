@@ -31,14 +31,17 @@
                     return false;
                 });
 
-                if (collapsed) {
-                    $("." + title).each(function () {
-                        $(this).addClass("accordeon");
+                
+                $("." + title).each(function () {
+                    $(this).addClass("accordeon");
+                    if (collapsed) {
                         $(this).addClass("accordeon__open");
                         $(this).next().hide();
-                    });
-                }
+                    } else {
+                        $(this).addClass("accordeon__close");
+                    }
 
+                });
             }
 
         };

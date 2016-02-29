@@ -90,28 +90,30 @@
     }
 
     &__range {
-        width: 264px;
-        overflow: hidden;
+        height: 4px;
+        margin-top: 18px;
+        margin-bottom: 29px;
+        background-color:  $grey;
     }
 
     &__range-left {
         display: inline-block;
         background-color: $grey;
-        width: 10%;
+        width: 10px;
         height: 3px;
     }
 
     &__range-middle {
         display: inline-block;
         background-color: $orange;
-        width: 60%;
+        width: 60px;
         height: 3px;
     }
 
     &__range-right {
         display: inline-block;
         background-color: $grey;
-        width: 30%;
+        width: 30px;
         height: 3px;
     }
 
@@ -121,17 +123,35 @@
     }
 
     &__rangemetka-left {
+        position: relative;
+        cursor: pointer;
         display: inline-block;
-        margin-left: 23px;
+        left: 0px;
     }
 
     &__rangemetka-right {
+        position: relative;
+        cursor: pointer;
         display: inline-block;
-        margin-left: 149px;
+        left: 264px;
     }
-
 }
 
+/*Полоска заполнителя слайдера*/
+.ui-widget-header {
+    background-color: $orange;
+    height:8px;
+    left:1px;
+    position:absolute;
+}
+
+.ui-slider-handle {
+    width: 9px !important;
+    height: 15px !important;
+    top: 2px !important;
+    margin-left: -4px !important;
+    position:absolute;
+}
 
 
 .os {
